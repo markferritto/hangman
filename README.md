@@ -22,7 +22,17 @@ A full-featured Hangman game built with React, TypeScript, and Redux Toolkit. Th
 - Git + GitHub
 
 ## 🗂️ Project Structure
-src/ ├── components/ # Reusable presentational components ├── lib/ # Game logic and helpers ├── slices/ # Redux logic (state, actions, reducers) ├── store.ts # Redux store config ├── App.tsx # Main component ├── main.tsx # App entry point └── index.css # Styles
+
+```
+src/
+├── components/    # Reusable presentational components
+├── lib/           # Game logic and helpers
+├── slices/        # Redux logic (state, actions, reducers)
+├── store.ts       # Redux store config
+├── App.tsx        # Main component
+├── main.tsx       # App entry point
+└── index.css      # Styles
+```
 
 ## 🚀 Getting Started
 
@@ -31,3 +41,4 @@ git clone https://github.com/markferritto/hangman.git
 cd hangman-game
 npm install
 npm run dev
+```
