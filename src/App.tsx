@@ -2,11 +2,14 @@ import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "./store";
 import { guessLetter, resetGame } from "./slices/gameSlice";
 import "./App.css";
-import type { GameStatus } from "./lib/hangmanLogic";
-import { getIncorrectLetters, getGameStatus } from "./lib/hangmanLogic";
+import {
+  getIncorrectLetters,
+  getGameStatus,
+  GameStatus,
+} from "./lib/hangmanLogic";
 import WordDisplay from "./components/WordDisplay";
 import Keyboard from "./components/Keyboard";
-import GameStatusDisplay from "./components/GameStatus";
+import GameStatusDisplay from "./components/GameStatusDisplay";
 
 function App() {
   const game = useSelector((state: RootState) => state.game);
@@ -28,10 +31,7 @@ function App() {
         guessedLetters={game.guessedLetters}
         onGuess={(letter) => dispatch(guessLetter(letter))}
       />
-      <GameStatusDisplay
-        status={gameStatus}
-        onReset={() => dispatch(resetGame())}
-      />
+      <GameStatusDisplay status={gameStatus} onReset={resetGame} />
     </div>
   );
 }

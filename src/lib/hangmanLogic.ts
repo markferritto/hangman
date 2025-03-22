@@ -1,5 +1,8 @@
-export type GameStatus = "playing" | "won" | "lost";
-
+export enum GameStatus {
+  PLAYING = "playing",
+  WON = "won",
+  LOST = "lost",
+}
 export interface HangmanGame {
   wordToGuess: string;
   guessedLetters: string[];
@@ -35,7 +38,7 @@ export function isGameWon(game: HangmanGame): boolean {
  * Returns the current game status.
  */
 export function getGameStatus(game: HangmanGame): GameStatus {
-  if (isGameWon(game)) return "won";
-  if (isGameLost(game)) return "lost";
-  return "playing";
+  if (isGameWon(game)) return GameStatus.WON;
+  if (isGameLost(game)) return GameStatus.LOST;
+  return GameStatus.PLAYING;
 }
