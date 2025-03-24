@@ -1,13 +1,31 @@
+/**
+ * Domain model for the Hangman game.
+ * Using an enum for GameStatus demonstrates type safety and domain modeling principles
+ * similar to those used in Domain-Driven Design (DDD).
+ */
 export enum GameStatus {
   PLAYING = "playing",
   WON = "won",
   LOST = "lost",
 }
+
+/**
+ * Core domain entity representing the game state.
+ * Following DDD principles by encapsulating related properties in a cohesive entity.
+ */
 export interface HangmanGame {
   wordToGuess: string;
   guessedLetters: string[];
   maxGuesses: number;
 }
+
+/**
+ * Pure function implementation for game logic.
+ * This functional approach ensures:
+ * 1. Testability - functions can be tested in isolation
+ * 2. Maintainability - single responsibility principle
+ * 3. Predictability - no side effects
+ */
 
 /**
  * Checks which letters are incorrect.
